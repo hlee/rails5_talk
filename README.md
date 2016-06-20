@@ -1,2 +1,24 @@
-# rails5_talk
-tech talk about new feature in rails 5
+# new feature in rails 5
+
+
+
+
+
+
+
+
+
+
+
+
+### resource and references
+
+* (sdf)[http://weblog.rubyonrails.org/]
+
+
+
+
+
+
+
+
