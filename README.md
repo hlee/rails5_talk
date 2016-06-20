@@ -53,6 +53,54 @@ If you want to learn more about creating Rails API application, here is a starte
 
 
 
+### Render a template outside controllers
+
+Rails 5 allows you to render templates or inline code outside controllers. This feature is important and useful for ActiveJob and the new ActionCable (we will discuss this one later).
+
+ActionController::Renderer is what makes this happen and it’s available in our ApplicationController class.
+
+Let’s dig into few examples on how this works.
+
+```ruby
+# render inline code
+ApplicationController.render inline: '<%= "Hello Rails" %>' # => "Hello Rails"
+
+# render a template
+ApplicationController.render 'sample/index' # => Rendered sample/index.html.erb within layouts/application (0.0ms)
+
+# render an action
+SampleController.render :index # => Rendered sample/index.html.erb within layouts/application (0.0ms)
+
+# render a file
+ApplicationController.render file: ::Rails.root.join('app', 'views', 'sample', 'index.html.erb') # =>   Rendered sample/index.html.erb within layouts/application (0.8ms)
+```
+
+This is really nice but what if we need to pass assigns or locals to our template?
+
+
+```ruby
+# Pass assigns
+ApplicationController.render assigns: { rails: 'Rails' }, inline: '<%= "Hello #{@rails}" %>' # => "Hello Rails"
+
+# Pass locals
+ApplicationController.render locals: { hello: 'Hello' }, assigns: { rails: 'Rails' }, inline: '<%= "#{hello} #{@rails}" %>' # => "Hello Rails"
+Now if we have to use route helper’s functions like root_url or any other helper that needs access to the environment we can do it, but what ActionController::Renderer will receive is not a real environment. Take in account that we might use this functionality outside HTTP request.
+
+ApplicationController.render inline: '<%= root_url %>' # => "http://example.org/"
+
+# Inspect ActionController::Renderer environment
+ApplicationController.renderer.defaults # => {:http_host=>"example.org", :https=>false, :method=>"get", :script_name=>"", "rack.input"=>""}
+
+# To modify this environment we have to explicitly create a renderer
+renderer = ApplicationController.renderer.new(
+    http_host: 'michelada.io'
+  ) # => #<#<Class:0x007fdf9985a338>:0x007fdf947981c0 @env={"HTTP_HOST"=>"michelada.io", "HTTPS"=>"off", "SCRIPT_NAME"=>"", "rack.input"=>"", "REQUEST_METHOD"=>"GET", "action_dispatch.routes"=>#<ActionDispatch::Routing::RouteSet:0x007fdf93d29450>}>
+  
+renderer.render inline: '<%= root_url %>' # => "http://michelada.io/"
+
+```
+
+
 
 ### ActiveRecord’s attribute API
 
