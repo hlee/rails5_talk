@@ -218,8 +218,8 @@ With the release of Rails 5, all versions of Rails from 4.1.x and below will no 
 
 ### others
 
-* [Better Minitest test runner]()
-* [Turbolinks]() 
+* [Better Minitest test runner](#)
+* [Turbolinks](#) 
 
 ### resource and references
 
