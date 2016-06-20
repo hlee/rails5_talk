@@ -86,6 +86,22 @@ Custom attributes will honor ActiveModel::Dirty to track changes in our models. 
 
 
 
+### or method in ActiveRecord::Relation
+
+Finally ActiveRecord::Relation is getting #or method, this will allow us to write queries with ActiveRecord DSL as follows:
+
+```ruby
+Book.where('status = 1').or(Book.where('status = 3'))
+\# => SELECT * FROM books WHERE (status = 1) OR (status = 3)
+#or method accepts a second relation as a parameter that is combined with an or. #or can also accept a relation in a form of model scope.
+
+class Book < ActiveRecord::Base
+  scope :new_coming, -> { where(status: 3) }
+end
+
+Book.where('status = 1').or(Book.new_coming)
+\# => SELECT * FROM books WHERE (status = 1) OR (status = 3)
+```
 
 ### resource and references
 
