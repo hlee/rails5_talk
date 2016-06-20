@@ -54,6 +54,34 @@ If you want to learn more about creating Rails API application, here is a starte
 
 
 
+### ActiveRecord’s attribute API
+
+This new API adds functionality on top of ActiveRecord models, it made possible to override an attribute type to be a different type.
+
+Consider the case where we have a field in the database defined as decimal but in our app we only care for the integer part of the number. We can in our app just ignore the decimal part and format our number everywhere we need to use it to only display the integer part.
+
+With attribute API we can do this in an easy way:
+
+```ruby
+class Book < ActiveRecord::Base
+end
+
+book.quantity # => 12.0
+
+class Book < ActiveRecord::Base
+  attribute :quantity, :integer
+end
+
+book.quantity # => 12
+```
+
+Here we are overriding the automatically generated attribute from the database schema to be cast in our model as an integer instead the original decimal. For every interaction of our model with the database, the attribute will be treated as a decimal as it should be.
+
+We can even define our own custom types just by creating a class derived from `ActiveRecord::Type::Value` and implementing its contract to `#cast`, `#serialize`, and `#deserialize` values.
+
+Custom attributes will honor ActiveModel::Dirty to track changes in our models. Also, these new attributes can be virtual, so there is no need to be backed by a table column.
+
+
 
 
 
