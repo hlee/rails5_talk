@@ -135,7 +135,7 @@ Custom attributes will honor ActiveModel::Dirty to track changes in our models. 
 * [Using the Rails 5 Attributes API Today, in Rails 4.2](https://nvisium.com/blog/2015/06/22/using-rails-5-attributes-api-today-in/)
 
 
-ApplicationRecord
+### ApplicationRecord
 
 And speaking of ActiveRecord, you might have noticed that the Product model above inherits from ApplicationRecord, not ActiveRecord::Base. This is because Rails now generates that class so that we can add all our customizations there instead of mokeypatching ActiveRecord::Base. Read more about it here:
 
