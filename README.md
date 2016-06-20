@@ -110,6 +110,12 @@ If you happen to run your Rails application on top of MySQL 5.7.8 then your data
 
 From Rails 5 you should be able to use this new data type within your ActiveRecord models.
 
+```ruby
+create_table :json_data_type do |t|
+  t.json :settings
+end
+```
+
 
 
 ### resource and references
