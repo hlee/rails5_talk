@@ -165,6 +165,23 @@ Book.where('status = 1').or(Book.new_coming)
 \# => SELECT * FROM books WHERE (status = 1) OR (status = 3)
 ```
 
+ActiveRecord::Relation#in_batches
+
+The new #in_batches method yields a relation, unlike #find_in_batches which yields an array. We can use this method for things like this:
+
+```ruby
+Person.where('age >= 18').in_batches(of: 1000) do |people|
+  people.update_all(can_vote: true)
+end
+
+```
+
+* [Documentation](https://github.com/rails/rails/blob/v5.0.0.beta1/activerecord/lib/active_record/relation/batches.rb#L132)
+* [New in ActiveRecord: #in_batches](http://crypt.codemancers.com/posts/2015-12-23-new-in-batches-method-in-active-record/)
+
+
+
+
 ### MySQL ActiveRecord adapter gets JSON support
 
 If you happen to run your Rails application on top of MySQL 5.7.8 then your database have a new native JSON data type.
