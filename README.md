@@ -215,6 +215,12 @@ With the release of Rails 5, all versions of Rails from 4.1.x and below will no 
 * [A Guide for Upgrading Ruby on Rails](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html)
 
 
+
+### others
+
+* [Better Minitest test runner]()
+* [Turbolinks]() 
+
 ### resource and references
 
 * [official log](http://weblog.rubyonrails.org)
