@@ -13,7 +13,7 @@
 
 ### resource and references
 
-* (sdf)[http://weblog.rubyonrails.org/]
+* [official log](http://weblog.rubyonrails.org)
 
 
 
