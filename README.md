@@ -130,8 +130,21 @@ We can even define our own custom types just by creating a class derived from `A
 Custom attributes will honor ActiveModel::Dirty to track changes in our models. Also, these new attributes can be virtual, so there is no need to be backed by a table column.
 
 
+* [Attributes API documentation](https://github.com/rails/rails/blob/master/activerecord/lib/active_record/attributes.rb)
+* [Introduction to Rails 5 Attributes](http://jakeyesbeck.com/2015/12/20/rails-5-attributes/)
+* [Using the Rails 5 Attributes API Today, in Rails 4.2](https://nvisium.com/blog/2015/06/22/using-rails-5-attributes-api-today-in/)
 
 
+ApplicationRecord
+
+And speaking of ActiveRecord, you might have noticed that the Product model above inherits from ApplicationRecord, not ActiveRecord::Base. This is because Rails now generates that class so that we can add all our customizations there instead of mokeypatching ActiveRecord::Base. Read more about it here:
+
+```ruby
+class Post < ApplicationRecord
+end
+```
+
+* [ApplicationRecord in Rails 5](http://blog.bigbinary.com/2015/12/28/application-record-in-rails-5.html)
 
 
 
