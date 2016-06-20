@@ -229,6 +229,10 @@ With the release of Rails 5, all versions of Rails from 4.1.x and below will no 
 * [rails 5 series](http://blog.bigbinary.com/categories/Rails-5)
 
 
+## THANKS
+
+tech support Jim Holly
+more tech discussion
 
 
 
