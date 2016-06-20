@@ -194,6 +194,10 @@ create_table :json_data_type do |t|
 end
 ```
 
+### New command router
+
+Ever accidentally typed rails db:migrate or rake generate model? Figuring out which command to use is often confusing to beginners. Now all such commands are routed through rails, so we will be able to use commands like rails db:migrate. The rake commands are still available if you want to use them.
+
 
 ### Supports only Ruby 2.2.2+
 
@@ -203,12 +207,19 @@ If you’re upgrading Ruby anyway, you might want to look at Ruby 2.3 which was 
 
 
 
+### Upgrading
+
+With the release of Rails 5, all versions of Rails from 4.1.x and below will no longer be supported. Bug fixes will only be released for Rails 5.0.x and 4.2.x. Now would be a good time to upgrade, at least to 4.2.x if you haven’t already done so. If you’re planning to upgrade to Rails 5.0, these resources could be useful:
+
+* [Upgrading to Ruby on Rails 5.0 from Rails 4.2 – application use case](http://dev.mensfeld.pl/2015/12/upgrading-to-ruby-on-rails-5-0-from-rails-4-2-application-use-case/)
+* [A Guide for Upgrading Ruby on Rails](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html)
+
 
 ### resource and references
 
 * [official log](http://weblog.rubyonrails.org)
 * [thoughtbot upcase](https://thoughtbot.com/upcase/videos/rails-5-whats-in-it-for-you)
-
+* [rails 5: what's new](https://medium.com/evil-martians/the-rails-5-post-9c76dbac8fc#.fl246pnz0)
 
 
 
