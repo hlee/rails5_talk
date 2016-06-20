@@ -86,6 +86,7 @@ Custom attributes will honor ActiveModel::Dirty to track changes in our models. 
 
 
 
+
 ### or method in ActiveRecord::Relation
 
 Finally ActiveRecord::Relation is getting #or method, this will allow us to write queries with ActiveRecord DSL as follows:
@@ -102,6 +103,14 @@ end
 Book.where('status = 1').or(Book.new_coming)
 \# => SELECT * FROM books WHERE (status = 1) OR (status = 3)
 ```
+
+### MySQL ActiveRecord adapter gets JSON support
+
+If you happen to run your Rails application on top of MySQL 5.7.8 then your database have a new native JSON data type.
+
+From Rails 5 you should be able to use this new data type within your ActiveRecord models.
+
+
 
 ### resource and references
 
