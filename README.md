@@ -195,6 +195,14 @@ end
 ```
 
 
+### Supports only Ruby 2.2.2+
+
+Rails has always pushed the community towards the latest Ruby versions, and 5.0 is no different. This version will only work on Ruby 2.2.2 and above. This lets Rails to improve performance by making use of the latest improvements in the Ruby garbage collector (like incremental GC and symbol GC).
+
+If you’re upgrading Ruby anyway, you might want to look at Ruby 2.3 which was released recently with a bunch of new features.
+
+
+
 
 ### resource and references
 
