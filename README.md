@@ -226,7 +226,7 @@ With the release of Rails 5, all versions of Rails from 4.1.x and below will no 
 * [official log](http://weblog.rubyonrails.org)
 * [thoughtbot upcase](https://thoughtbot.com/upcase/videos/rails-5-whats-in-it-for-you)
 * [rails 5: what's new](https://medium.com/evil-martians/the-rails-5-post-9c76dbac8fc#.fl246pnz0)
-
+* [rails 5 series](http://blog.bigbinary.com/categories/Rails-5)
 
 
 
