@@ -165,7 +165,7 @@ Book.where('status = 1').or(Book.new_coming)
 \# => SELECT * FROM books WHERE (status = 1) OR (status = 3)
 ```
 
-ActiveRecord::Relation#in_batches
+### ActiveRecord::Relation#in_batches
 
 The new #in_batches method yields a relation, unlike #find_in_batches which yields an array. We can use this method for things like this:
 
